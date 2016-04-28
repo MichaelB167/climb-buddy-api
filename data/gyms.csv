@@ -1,3 +1,3 @@
-name,location,date_visited
-central rock,watertown,2016-4-20
-central rock,cambridge,2016-4-21
+name,location,date_visited,user_id
+central rock,watertown,2016-4-20,1
+central rock,cambridge,2016-4-21,2

@@ -1,0 +1,1 @@
+\copy climbs(route_type,route_grade,hold_type_of_fall,fall_notes,user_id,gym_id) FROM 'data/climbs.csv' WITH (HEADER true, FORMAT csv)

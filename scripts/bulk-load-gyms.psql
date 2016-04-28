@@ -1,0 +1,1 @@
+\copy gyms(name,location,date_visited,user_id) FROM 'data/gyms.csv' WITH (HEADER true, FORMAT csv)
