@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :examples, except: [:new, :edit]
+  resources :gyms, except: [:new, :edit]
+  resources :climbs, except: [:new, :edit]
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'
   delete '/sign-out/:id' => 'users#signout'
