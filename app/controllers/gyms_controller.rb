@@ -1,11 +1,11 @@
 # gyms controller
 class GymsController < ApplicationController
-  before_action :set_climb, only: [:update, :destroy]
+  before_action :set_gym, only: [:update, :destroy]
 
   # GET /gyms
   # GET /gyms.json
   def index
-    @gyms = Gyms.all
+    @gyms = Gym.all
 
     render json: @gyms
   end
