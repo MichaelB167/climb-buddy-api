@@ -1,5 +1,5 @@
-curl --include --request POST http://localhost:3000/stores/1/gyms \
-  --header "Authorization: Token token=" \
+curl --include --request POST http://localhost:3000/gyms \
+  --header "Authorization: Token token=BAhJIiUyMDgwMDk5OGIwYWU3OGI1NTQ0NzllOGEwMGIwNTAxMwY6BkVG--b54504104a0b133fd44ef7cdd5573afad25cfdae" \
   --header "Content-Type: application/json" \
   --data '{
     "gyms": {
