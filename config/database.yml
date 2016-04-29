@@ -1,4 +1,4 @@
-<% project_name = 'climb-buddy-api' %>
+<% project_name = 'climb-hard-api' %>
 
 default: &default
   adapter: postgresql
