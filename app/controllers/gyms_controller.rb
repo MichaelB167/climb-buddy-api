@@ -1,11 +1,11 @@
 # gyms controller
-class GymsController < ApplicationController
+class GymsController < ProtectedController
   before_action :set_gym, only: [:update, :destroy]
 
   # GET /gyms
   # GET /gyms.json
   def index
-    @gyms = Gym.all
+    @gyms = current_user.gyms
 
     render json: @gyms
   end
@@ -13,16 +13,16 @@ class GymsController < ApplicationController
   # GET /gyms/1
   # GET /gyms/1.json
   def show
-    render json: @gym
+    render json: Gym.find(params[:id])
   end
 
   # POST /gyms
   # POST /gyms.json
   def create
-    @gym = Gym.new(gym_params)
+    @gym = current_user.gyms.build(gym_params)
 
     if @gym.save
-      render json: @gym, status: :created, location: @gym_params
+      render json: @gym, status: :created, location: @gym
     else
       render json: @contact.errors, status: :unprocessable_entity
     end
@@ -51,10 +51,12 @@ class GymsController < ApplicationController
   private
 
   def set_gym
-    @gym = Gym.find(params[:id])
+    @gym = current_user.gyms.find(params[:id])
   end
 
   def gym_params
-    params.require(:gyms).permit(:name, :location, :date_visited)
+    params.require(:gym).permit(:name, :location, :date_visited)
   end
+
+  private :set_gym, :gym_params
 end
