@@ -6,7 +6,6 @@ class ClimbsController < ProtectedController
   # GET /climbs.json
   def index
     @climbs = current_user.climbs
-
     render json: @climbs
   end
 
