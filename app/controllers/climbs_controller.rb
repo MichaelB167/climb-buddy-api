@@ -31,10 +31,8 @@ class ClimbsController < ProtectedController
   # PATCH/PUT /climbs/1
   # PATCH/PUT /climbs/1.json
   def update
-    @climb = Climb.find(params[:id])
-
     if @climb.update(climb_params)
-      head :no_content
+      render json: @climb, status: :ok
     else
       render json: @climb.errors, status: :unprocessable_entity
     end
