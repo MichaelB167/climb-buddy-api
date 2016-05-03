@@ -2,3 +2,5 @@
   curl --include --request GET http://localhost:3000/climbs/ \
     --header "Authorization: Token token=$TOKEN" \
     --header "Content-Type: application/json" \
+
+#test
